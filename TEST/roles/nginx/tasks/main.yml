@@ -1,0 +1,11 @@
+- name: Add nginx repository
+  apt_repository: repo='ppa:nginx/stable'
+
+- name: Install nginx
+  apt: name=nginx state=latest update_cache=true
+  file: src=nginx.conf dest=/etc/nginx/sites-available/default 
+  
+- name: copy index.html
+- template: src=index.html.j2 dest=/usr/share/nginx/html/index.html
+
+

@@ -1,0 +1,8 @@
+- hosts: test1
+  sudo: yes
+      roles:
+  - { role: nginx }
+  - { role: mysql }
+  - { role: memcached }
+  - { role: php5 }
+  - { role: phpmyadmin }
